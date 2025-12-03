@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentEasy - Find Your Dream Apartment</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <style>
+    /* Hero background image with gradient overlay */
+    .hero-bg {
+      position: relative;
+      background: linear-gradient(135deg, rgba(79,70,229,0.6), rgba(59,130,246,0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161c5ad06?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Floating shapes */
+    .hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-shape.shape1 { width: 300px; height: 300px; background: #facc15; top: -50px; left: -50px; }
+    .hero-shape.shape2 { width: 400px; height: 400px; background: #f43f5e; bottom: -100px; right: -100px; animation-delay: 3s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-20px) translateX(15px); }
+    }
+
+    .section-curve { border-top-left-radius: 4rem; border-top-right-radius: 4rem; }
+    .bottom-padding { padding-bottom: 6rem; }
+
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .btn-animated { transition: all 0.3s ease; }
+    .btn-animated:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 25px rgba(0,0,0,0.2); }
+  </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+  <!-- Hero Section -->
+  <header class="hero-bg text-white flex flex-col justify-center items-center text-center px-6">
+    <div class="hero-shape shape1"></div>
+    <div class="hero-shape shape2"></div>
+
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg fade-in">Welcome to <span class="text-yellow-300">RentEasy</span></h1>
+    <p class="text-lg md:text-xl max-w-2xl mb-8 drop-shadow fade-in" style="transition-delay:0.3s">
+      Discover premium apartments, verified listings, and find your dream home effortlessly.
+    </p>
+    <a href="#features" class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-8 py-4 rounded-3xl shadow-xl btn-animated fade-in" style="transition-delay:0.5s">
+      Get Started
+    </a>
+
+    <div class="absolute bottom-10 animate-bounce">
+      <span class="material-icons text-4xl">keyboard_arrow_down</span>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features" class="bg-white section-curve py-20 px-6 bottom-padding fade-in">
+    <h2 class="text-4xl font-bold text-gray-800 text-center mb-12">Why Choose RentEasy?</h2>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-3 hover:scale-105 fade-in">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=400&q=80" alt="Apartment" class="rounded-2xl mb-4 w-full h-48 object-cover">
+        <h3 class="text-2xl font-semibold mb-2">Wide Options</h3>
+        <p class="text-gray-600">Explore apartments from budget-friendly to luxury across top cities.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-3 hover:scale-105 fade-in" style="transition-delay:0.2s">
+        <img src="https://images.unsplash.com/photo-1598300051245-7f4b64ee9445?auto=format&fit=crop&w=400&q=80" alt="Search" class="rounded-2xl mb-4 w-full h-48 object-cover">
+        <h3 class="text-2xl font-semibold mb-2">Smart Search</h3>
+        <p class="text-gray-600">Filter by budget, location, amenities, and more for faster results.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-3 hover:scale-105 fade-in" style="transition-delay:0.4s">
+        <img src="https://images.unsplash.com/photo-1600585154363-4ed0a4299b6b?auto=format&fit=crop&w=400&q=80" alt="Verified" class="rounded-2xl mb-4 w-full h-48 object-cover">
+        <h3 class="text-2xl font-semibold mb-2">Verified Listings</h3>
+        <p class="text-gray-600">Trust only genuine listings from verified apartment owners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-r from-blue-500 to-indigo-600 py-20 px-6 text-center text-white fade-in bottom-padding">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Find Your Dream Home?</h2>
+    <p class="text-lg mb-8 max-w-2xl mx-auto">Start your search today and get matched with the perfect apartment in minutes.</p>
+    <a href="#features" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-3xl shadow-xl btn-animated">
+      Explore Listings
+    </a>
+    <div class="mt-8">
+      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1000&q=80" alt="Apartment CTA" class="mx-auto rounded-2xl shadow-lg max-w-xl">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12 bottom-padding">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <div class="text-center md:text-left fade-in">
+        <h1 class="text-2xl font-bold text-white mb-4">RentEasy</h1>
+        <p class="text-gray-400">Find your dream apartment easily and quickly.</p>
+      </div>
+
+      <div class="text-center fade-in">
+        <h3 class="font-semibold text-white mb-4">Quick Links</h3>
+        <ul>
+          <li><a href="#features" class="hover:text-yellow-400 transition">Features</a></li>
+          <li><a href="#features" class="hover:text-yellow-400 transition">Explore</a></li>
+          <li><a href="#features" class="hover:text-yellow-400 transition">About</a></li>
+        </ul>
+      </div>
+
+      <div class="text-center md:text-right fade-in">
+        <h3 class="font-semibold text-white mb-4">Follow Us</h3>
+        <div class="flex justify-center md:justify-end gap-4">
+          <a href="#" class="hover:text-yellow-400 transition"><span class="material-icons">facebook</span></a>
+          <a href="#" class="hover:text-yellow-400 transition"><span class="material-icons">twitter</span></a>
+          <a href="#" class="hover:text-yellow-400 transition"><span class="material-icons">instagram</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center text-gray-500 fade-in">
+      &copy; 2025 RentEasy. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Load Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <script>
+    fetch("navbar.html").then(res => res.text()).then(data => { document.getElementById("navbar-placeholder").innerHTML = data; });
+
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+
+</body>
+</html>
